@@ -262,11 +262,11 @@ scheduler_events = {
 # ------------------
 
 # Functions to execute before/after app installation
-before_install = "taskflow_ai.taskflow_ai.install.before_install"
-after_install = "taskflow_ai.taskflow_ai.install.after_install"
+before_install = "taskflow_ai.install.before_install"
+after_install = "taskflow_ai.install.after_install"
 
 # Function to execute when app is being uninstalled
-before_uninstall = "taskflow_ai.taskflow_ai.install.uninstall"
+before_uninstall = "taskflow_ai.install.uninstall"
 
 # auth_hooks = [
 # 	"taskflow_ai.auth.validate"
