@@ -1,6 +1,8 @@
 {
  "actions": [],
- "creation": "2025-08-22 12:00:00",
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2025-08-22 16:30:00.000000",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -101,9 +103,11 @@
    "label": "Assignment Notes"
   }
  ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-22 12:00:00",
+ "modified": "2025-08-22 16:30:00.000000",
  "modified_by": "Administrator",
  "module": "TaskFlow AI",
  "name": "Task Assignment Item",
