@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "creation": "2025-08-21 10:30:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "skill",
+  "skill_category",
+  "column_break_3",
+  "rating",
+  "proficiency_level",
+  "section_break_6",
+  "years_experience",
+  "last_used",
+  "column_break_9",
+  "certification",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "skill",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Skill",
+   "options": "Skill Master",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "skill.skill_category",
+   "fieldname": "skill_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Skill Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "50",
+   "fieldname": "rating",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rating (0-100)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Intermediate",
+   "fieldname": "proficiency_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Proficiency Level",
+   "options": "Beginner\nIntermediate\nAdvanced\nExpert"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Additional Details"
+  },
+  {
+   "default": "1",
+   "fieldname": "years_experience",
+   "fieldtype": "Float",
+   "label": "Years Experience",
+   "non_negative": 1,
+   "precision": "1"
+  },
+  {
+   "fieldname": "last_used",
+   "fieldtype": "Date",
+   "label": "Last Used"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "certification",
+   "fieldtype": "Data",
+   "label": "Certification"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-21 10:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Taskflow Ai",
+ "name": "Employee Skill Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

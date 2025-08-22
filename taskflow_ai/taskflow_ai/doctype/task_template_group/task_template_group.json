@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-21 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info",
+  "group_name",
+  "category",
+  "lead_segment",
+  "column_break_3",
+  "active",
+  "auto_trigger",
+  "section_break_6",
+  "description",
+  "trigger_conditions",
+  "trigger_condition",
+  "templates_section",
+  "templates"
+ ],
+ "fields": [
+  {
+   "fieldname": "group_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Group Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "ERPNext Implementation\nCustom Development\nSupport Project\nMaintenance\nConsulting"
+  },
+  {
+   "fieldname": "lead_segment",
+   "fieldtype": "Link",
+   "label": "Lead Segment",
+   "options": "Lead Segment",
+   "description": "Link to Lead Segment for dynamic relationship"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "description": "Auto-create project when trigger condition is met",
+   "fieldname": "auto_trigger",
+   "fieldtype": "Check",
+   "label": "Auto Trigger"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "depends_on": "auto_trigger",
+   "fieldname": "trigger_conditions",
+   "fieldtype": "Section Break",
+   "label": "Trigger Conditions"
+  },
+  {
+   "depends_on": "auto_trigger",
+   "description": "e.g., Lead.status == 'Interested' or Opportunity.status == 'Quotation'",
+   "fieldname": "trigger_condition",
+   "fieldtype": "Code",
+   "label": "Trigger Condition"
+  },
+  {
+   "fieldname": "templates_section",
+   "fieldtype": "Section Break",
+   "label": "Task Templates"
+  },
+  {
+   "fieldname": "templates",
+   "fieldtype": "Table",
+   "label": "Templates",
+   "options": "Task Template Group Item"
+  },
+  {
+   "fieldname": "basic_info",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-21 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Taskflow Ai",
+ "name": "Task Template Group",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "group_name",
+ "track_changes": 1
+}

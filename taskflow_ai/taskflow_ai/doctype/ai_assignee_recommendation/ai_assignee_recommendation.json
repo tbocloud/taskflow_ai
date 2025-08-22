@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "creation": "2025-08-21 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "fit_score",
+  "rank",
+  "availability_score",
+  "skill_match_score",
+  "workload_score",
+  "performance_score",
+  "reasoning"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fit_score",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Overall Fit Score"
+  },
+  {
+   "fieldname": "rank",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rank"
+  },
+  {
+   "fieldname": "availability_score",
+   "fieldtype": "Percent",
+   "label": "Availability Score"
+  },
+  {
+   "fieldname": "skill_match_score",
+   "fieldtype": "Percent",
+   "label": "Skill Match Score"
+  },
+  {
+   "fieldname": "workload_score",
+   "fieldtype": "Percent",
+   "label": "Current Workload Score"
+  },
+  {
+   "fieldname": "performance_score",
+   "fieldtype": "Percent",
+   "label": "Historical Performance Score"
+  },
+  {
+   "fieldname": "reasoning",
+   "fieldtype": "Small Text",
+   "label": "AI Reasoning"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-21 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Taskflow Ai",
+ "name": "AI Assignee Recommendation",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

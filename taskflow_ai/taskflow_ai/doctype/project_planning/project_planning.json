@@ -1,0 +1,383 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-08-22 09:12:25.901522",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "lead_section",
+  "lead",
+  "lead_name",
+  "column_break_1",
+  "company_name",
+  "lead_status",
+  "project_planning_section",
+  "planning_status",
+  "project_title",
+  "column_break_2",
+  "assigned_project_manager",
+  "priority",
+  "project_details_section",
+  "project_description",
+  "expected_budget",
+  "column_break_3",
+  "expected_start_date",
+  "expected_end_date",
+  "estimated_duration_months",
+  "template_section",
+  "lead_segment",
+  "template_group",
+  "column_break_4",
+  "use_ai_predictions",
+  "auto_assign_by_skills",
+  "review_section",
+  "review_comments",
+  "rejection_reason",
+  "column_break_5",
+  "reviewed_by",
+  "review_date",
+  "generated_project_section",
+  "generated_project",
+  "tasks_generated_count",
+  "column_break_6",
+  "project_creation_date",
+  "project_created_by",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "PP-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PP-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lead_section",
+   "fieldtype": "Section Break",
+   "label": "Lead Information"
+  },
+  {
+   "description": "Lead that will be converted to project",
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Source Lead",
+   "options": "Lead",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "lead.lead_name",
+   "fieldname": "lead_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lead Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "lead.company_name",
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "lead.status",
+   "fieldname": "lead_status",
+   "fieldtype": "Data",
+   "label": "Lead Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_planning_section",
+   "fieldtype": "Section Break",
+   "label": "Project Planning Details"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "planning_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Planning Status",
+   "options": "Draft\nUnder Review\nApproved\nRejected\nOn Hold",
+   "reqd": 1
+  },
+  {
+   "description": "Title for the project to be created",
+   "fieldname": "project_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Proposed Project Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Project Manager who will review and approve this planning",
+   "fieldname": "assigned_project_manager",
+   "fieldtype": "Link",
+   "label": "Assigned Project Manager",
+   "options": "User"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Project Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "project_details_section",
+   "fieldtype": "Section Break",
+   "label": "Project Scope & Timeline"
+  },
+  {
+   "description": "Detailed description of the project scope and requirements",
+   "fieldname": "project_description",
+   "fieldtype": "Text Editor",
+   "label": "Project Description"
+  },
+  {
+   "description": "Estimated project budget",
+   "fieldname": "expected_budget",
+   "fieldtype": "Currency",
+   "label": "Expected Budget"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expected_start_date",
+   "fieldtype": "Date",
+   "label": "Expected Start Date"
+  },
+  {
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected End Date"
+  },
+  {
+   "default": "3",
+   "fieldname": "estimated_duration_months",
+   "fieldtype": "Int",
+   "label": "Estimated Duration (Months)"
+  },
+  {
+   "fieldname": "template_section",
+   "fieldtype": "Section Break",
+   "label": "Template Selection"
+  },
+  {
+   "description": "Automatically selected based on lead segment",
+   "fetch_from": "lead.custom_lead_segment",
+   "fieldname": "lead_segment",
+   "fieldtype": "Data",
+   "label": "Lead Segment",
+   "read_only": 1
+  },
+  {
+   "description": "Override automatic template selection (enter template name)",
+   "fieldname": "template_group",
+   "fieldtype": "Data",
+   "label": "Template Group Override"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "description": "Generate AI-powered task predictions and assignments",
+   "fieldname": "use_ai_predictions",
+   "fieldtype": "Check",
+   "label": "Enable AI Predictions"
+  },
+  {
+   "default": "1",
+   "description": "Automatically assign tasks based on employee skills",
+   "fieldname": "auto_assign_by_skills",
+   "fieldtype": "Check",
+   "label": "Auto-assign by Skills"
+  },
+  {
+   "fieldname": "review_section",
+   "fieldtype": "Section Break",
+   "label": "Project Manager Review"
+  },
+  {
+   "description": "Project Manager's review comments and feedback",
+   "fieldname": "review_comments",
+   "fieldtype": "Text Editor",
+   "label": "Review Comments"
+  },
+  {
+   "depends_on": "eval:doc.planning_status=='Rejected'",
+   "fieldname": "rejection_reason",
+   "fieldtype": "Select",
+   "label": "Rejection Reason",
+   "options": "Insufficient Budget\nUnclear Requirements\nResource Constraints\nTiming Issues\nOther"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "User who reviewed and approved/rejected",
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "review_date",
+   "fieldtype": "Datetime",
+   "label": "Review Date",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.generated_project",
+   "fieldname": "generated_project_section",
+   "fieldtype": "Section Break",
+   "label": "Generated Project"
+  },
+  {
+   "description": "Project created from this planning",
+   "fieldname": "generated_project",
+   "fieldtype": "Link",
+   "label": "Generated Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "tasks_generated_count",
+   "fieldtype": "Int",
+   "label": "Tasks Generated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_creation_date",
+   "fieldtype": "Datetime",
+   "label": "Project Created On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_created_by",
+   "fieldtype": "Link",
+   "label": "Project Created By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Planning",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-22 09:12:25.901522",
+ "modified_by": "Administrator",
+ "module": "Taskflow Ai",
+ "name": "Project Planning",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "lead,project_title,planning_status",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "project_title",
+ "track_changes": 1,
+ "track_seen": 1
+}

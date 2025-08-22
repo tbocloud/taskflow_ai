@@ -1,0 +1,142 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"efR25-pfXx\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Taskflow AI</span>\",\"col\":12}},{\"id\":\"WzZZZNAGbO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"8JCOkSrf6H\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Planning\",\"col\":3}},{\"id\":\"YfjGXOAocC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead Segment\",\"col\":3}},{\"id\":\"AYfXuBSjee\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Task Template Group\",\"col\":3}},{\"id\":\"aQa3jYK6d7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Task Template\",\"col\":3}},{\"id\":\"L6VN-2x_Y5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"id\":\"Os2-XQaRAJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Task\",\"col\":3}},{\"id\":\"H9wsSdhZ8u\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AI Task Profile\",\"col\":3}},{\"id\":\"Fta2-3afhS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Task Assignment\",\"col\":3}},{\"id\":\"TYqx0nMNBb\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Gz3xDRDKPO\",\"type\":\"card\",\"data\":{\"card_name\":\"Shortcuts\",\"col\":4}}]",
+ "creation": "2025-08-21 12:51:06.393495",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "expand",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Taskflow AI",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shortcuts",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Skill Category",
+   "link_count": 0,
+   "link_to": "Skill Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Skill Master",
+   "link_count": 0,
+   "link_to": "Skill Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": " Employee Skills",
+   "link_count": 0,
+   "link_to": "Employee Skills",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-08-22 14:07:54.550660",
+ "modified_by": "Administrator",
+ "module": "Taskflow Ai",
+ "name": "Taskflow AI",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 28.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Planning",
+   "link_to": "Project Planning",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Lead Segment",
+   "link_to": "Lead Segment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee Task Assignment",
+   "link_to": "Employee Task Assignment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Task Template Group",
+   "link_to": "Task Template Group",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Lead",
+   "link_to": "Lead",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Task Template",
+   "link_to": "Task Template",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project",
+   "link_to": "Project",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "AI Task Profile",
+   "link_to": "AI Task Profile",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Task",
+   "link_to": "Task",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Taskflow AI"
+}

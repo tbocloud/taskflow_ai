@@ -1,0 +1,221 @@
+{
+ "actions": [],
+ "creation": "2025-08-21 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "task_info",
+  "task",
+  "task_template",
+  "column_break_3",
+  "created_on",
+  "last_updated",
+  "ai_predictions",
+  "predicted_duration_hours",
+  "predicted_due_date",
+  "column_break_8",
+  "slip_risk_percentage",
+  "confidence_score",
+  "section_break_11",
+  "complexity_score",
+  "embedding_vector",
+  "column_break_14",
+  "model_version",
+  "explanation",
+  "recommended_assignees_section",
+  "recommended_assignees",
+  "learning_section",
+  "actual_duration_hours",
+  "actual_completion_date",
+  "column_break_20",
+  "prediction_accuracy",
+  "feedback_score"
+ ],
+ "fields": [
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Task",
+   "options": "Task",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "task_template",
+   "fieldtype": "Link",
+   "label": "Task Template",
+   "options": "Task Template"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "created_on",
+   "fieldtype": "Datetime",
+   "label": "Created On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_updated",
+   "fieldtype": "Datetime",
+   "label": "Last Updated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ai_predictions",
+   "fieldtype": "Section Break",
+   "label": "AI Predictions"
+  },
+  {
+   "description": "AI predicted duration in hours",
+   "fieldname": "predicted_duration_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Predicted Duration (Hours)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "predicted_due_date",
+   "fieldtype": "Date",
+   "label": "Predicted Due Date"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Probability of missing deadline (0-100%)",
+   "fieldname": "slip_risk_percentage",
+   "fieldtype": "Percent",
+   "label": "Slip Risk %"
+  },
+  {
+   "description": "AI prediction confidence (0-1)",
+   "fieldname": "confidence_score",
+   "fieldtype": "Float",
+   "label": "Confidence Score",
+   "precision": "3"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Task complexity from NLP analysis (0-1)",
+   "fieldname": "complexity_score",
+   "fieldtype": "Float",
+   "label": "Complexity Score",
+   "precision": "3"
+  },
+  {
+   "description": "Task embedding vector as JSON",
+   "fieldname": "embedding_vector",
+   "fieldtype": "JSON",
+   "label": "Embedding Vector"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "model_version",
+   "fieldtype": "Data",
+   "label": "Model Version"
+  },
+  {
+   "description": "SHAP explanations or key features",
+   "fieldname": "explanation",
+   "fieldtype": "Small Text",
+   "label": "AI Explanation"
+  },
+  {
+   "fieldname": "recommended_assignees_section",
+   "fieldtype": "Section Break",
+   "label": "Recommended Assignees"
+  },
+  {
+   "fieldname": "recommended_assignees",
+   "fieldtype": "Table",
+   "label": "Assignee Recommendations",
+   "options": "AI Assignee Recommendation"
+  },
+  {
+   "fieldname": "learning_section",
+   "fieldtype": "Section Break",
+   "label": "Learning & Feedback"
+  },
+  {
+   "description": "Actual time spent (for learning)",
+   "fieldname": "actual_duration_hours",
+   "fieldtype": "Float",
+   "label": "Actual Duration (Hours)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "actual_completion_date",
+   "fieldtype": "Date",
+   "label": "Actual Completion Date"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "How accurate was the AI prediction?",
+   "fieldname": "prediction_accuracy",
+   "fieldtype": "Percent",
+   "label": "Prediction Accuracy",
+   "read_only": 1
+  },
+  {
+   "description": "User feedback on AI recommendations (1-5)",
+   "fieldname": "feedback_score",
+   "fieldtype": "Rating",
+   "label": "Feedback Score"
+  },
+  {
+   "fieldname": "task_info",
+   "fieldtype": "Section Break",
+   "label": "Task Information"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-21 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Taskflow Ai",
+ "name": "AI Task Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "task",
+ "track_changes": 1
+}

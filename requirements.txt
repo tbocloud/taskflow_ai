@@ -1,0 +1,16 @@
+# TaskFlow AI Package Dependencies
+# These packages will be automatically installed during app installation
+
+# Core Python packages (usually already available in Frappe environment)
+python-dateutil>=2.8.0
+requests>=2.25.0
+
+# Optional packages for future AI/ML integration
+# numpy>=1.21.0
+# pandas>=1.3.0
+# scikit-learn>=1.0.0
+
+# Note: Frappe and ERPNext are managed by bench and not listed here
+# The main dependencies are:
+# - frappe>=15.0.0 (managed by bench)
+# - erpnext (managed by bench)

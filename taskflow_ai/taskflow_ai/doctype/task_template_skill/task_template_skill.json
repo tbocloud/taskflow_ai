@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "creation": "2025-08-21 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "skill",
+  "required_level",
+  "weight"
+ ],
+ "fields": [
+  {
+   "fieldname": "skill",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Skill",
+   "reqd": 1
+  },
+  {
+   "default": "3",
+   "fieldname": "required_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Required Level",
+   "options": "1\n2\n3\n4\n5"
+  },
+  {
+   "default": "1",
+   "description": "Importance weight for this skill (1-5)",
+   "fieldname": "weight",
+   "fieldtype": "Int",
+   "label": "Weight"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-21 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Taskflow Ai",
+ "name": "Task Template Skill",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

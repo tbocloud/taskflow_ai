@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-21 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info",
+  "template_name",
+  "category",
+  "level",
+  "column_break_4",
+  "module",
+  "priority",
+  "active",
+  "group_section",
+  "task_template_group",
+  "sequence_in_group",
+  "section_break_8",
+  "description",
+  "requirements",
+  "ai_settings",
+  "default_duration_hours",
+  "ai_complexity_score",
+  "column_break_12",
+  "required_skills",
+  "default_role",
+  "dependencies_section",
+  "dependencies"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Template Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Pre-Sales\nImplementation\nCustomization\nUAT & Go-Live\nSupport\nMaintenance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Select",
+   "label": "Complexity Level",
+   "options": "Basic\nIntermediate\nAdvanced\nExpert"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "module",
+   "fieldtype": "Select",
+   "label": "ERPNext Module",
+   "options": "\nCRM\nSales\nAccounts\nStock\nBuying\nManufacturing\nHR\nPayroll\nProjects\nAssets\nCustomization\nIntegration\nReports"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "default": "Medium",
+   "label": "Default Priority",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "default": "1",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "group_section",
+   "fieldtype": "Section Break",
+   "label": "Template Group Assignment"
+  },
+  {
+   "description": "Select which Task Template Group this template belongs to",
+   "fieldname": "task_template_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Task Template Group",
+   "options": "Task Template Group"
+  },
+  {
+   "depends_on": "task_template_group",
+   "description": "Order of execution within the group (1, 2, 3...)",
+   "fieldname": "sequence_in_group",
+   "fieldtype": "Int",
+   "label": "Sequence in Group",
+   "default": "1"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "requirements",
+   "fieldtype": "Text",
+   "label": "Requirements & Deliverables"
+  },
+  {
+   "fieldname": "ai_settings",
+   "fieldtype": "Section Break",
+   "label": "AI Settings"
+  },
+  {
+   "description": "Estimated hours to complete this task",
+   "fieldname": "default_duration_hours",
+   "fieldtype": "Float",
+   "label": "Default Duration (Hours)",
+   "precision": "2"
+  },
+  {
+   "description": "AI complexity score from 0-1 (0=simple, 1=very complex)",
+   "fieldname": "ai_complexity_score",
+   "fieldtype": "Float",
+   "label": "AI Complexity Score",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Skills required for this task",
+   "fieldname": "required_skills",
+   "fieldtype": "Table",
+   "label": "Required Skills",
+   "options": "Task Template Skill"
+  },
+  {
+   "fieldname": "default_role",
+   "fieldtype": "Link",
+   "label": "Default Role",
+   "options": "Role"
+  },
+  {
+   "fieldname": "dependencies_section",
+   "fieldtype": "Section Break",
+   "label": "Dependencies"
+  },
+  {
+   "fieldname": "dependencies",
+   "fieldtype": "Table",
+   "label": "Task Dependencies",
+   "options": "Task Template Dependency"
+  },
+  {
+   "fieldname": "basic_info",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-21 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Taskflow Ai",
+ "name": "Task Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "template_name",
+ "track_changes": 1
+}

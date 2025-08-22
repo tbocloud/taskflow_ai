@@ -1,0 +1,41 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container">
+    <h3>{{ doc.employee_name }} - Skills Profile</h3>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Employee Information</h4>
+            <table class="table">
+                <tr><td><strong>Employee ID:</strong></td><td>{{ doc.employee }}</td></tr>
+                <tr><td><strong>Department:</strong></td><td>{{ doc.department or "Not Set" }}</td></tr>
+                <tr><td><strong>Designation:</strong></td><td>{{ doc.designation or "Not Set" }}</td></tr>
+                <tr><td><strong>Total Skills:</strong></td><td>{{ doc.total_skills }}</td></tr>
+                <tr><td><strong>Last Updated:</strong></td><td>{{ frappe.format_date(doc.last_updated) }}</td></tr>
+            </table>
+        </div>
+        
+        <div class="col-md-6">
+            <h4>Skill Ratings Overview</h4>
+            <div class="progress-group">
+                {% for skill in skills_summary %}
+                    <div class="skill-item" style="margin-bottom: 10px;">
+                        <label>{{ skill.skill }}</label>
+                        <div class="progress">
+                            <div class="progress-bar 
+                                {% if skill.rating >= 90 %}progress-bar-success
+                                {% elif skill.rating >= 75 %}progress-bar-info  
+                                {% elif skill.rating >= 50 %}progress-bar-warning
+                                {% else %}progress-bar-danger{% endif %}" 
+                                style="width: {{ skill.rating }}%">
+                                {{ skill.rating }}%
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

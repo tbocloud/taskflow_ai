@@ -1,9 +1,39 @@
 app_name = "taskflow_ai"
 app_title = "Taskflow Ai"
 app_publisher = "sammish"
-app_description = "taskflow_ai"
+app_description = "AI-powered task automation and scheduling for ERPNext"
 app_email = "sammish.thundiyil@gmail.com"
 app_license = "mit"
+required_apps = ["erpnext"]
+
+# Document Events - AI automation hooks
+doc_events = {
+    "Lead": {
+        "on_update": "taskflow_ai.utils.on_lead_status_change"
+    },
+    "Task": {
+        "after_insert": [
+            "taskflow_ai.utils.auto_create_ai_profile",
+            "taskflow_ai.utils.auto_assign_employee_with_todo"
+        ]
+    },
+    "Project": {
+        "before_save": "taskflow_ai.utils.ensure_ai_generated_flag"
+    }
+}
+
+# Scheduled Events - AI learning and optimization
+scheduler_events = {
+    "hourly": [
+        "taskflow_ai.ai.automation.auto_check_trigger_conditions"
+    ],
+    "daily": [
+        "taskflow_ai.ai.training.build_training_dataset"
+    ],
+    "weekly": [
+        "taskflow_ai.ai.training.retrain_models"
+    ]
+}
 
 # Apps
 # ------------------
@@ -137,34 +167,31 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+# Lead conversion hooks - Create Project Planning instead of direct projects
+doc_events = {
+	"Lead": {
+		"on_update": "taskflow_ai.taskflow_ai.enhanced_lead_conversion.auto_create_project_planning_from_lead"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"taskflow_ai.tasks.all"
-# 	],
-# 	"daily": [
-# 		"taskflow_ai.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"taskflow_ai.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"taskflow_ai.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"taskflow_ai.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"taskflow_ai.taskflow_ai.automated_lead_processor.schedule_converted_leads_processor"
+	],
+	"hourly": [
+		# Check for any newly converted leads every hour
+		"taskflow_ai.taskflow_ai.automated_lead_processor.schedule_converted_leads_processor"
+	],
+	"cron": {
+		# Every 5 minutes - aggressive monitoring for real-time processing
+		"*/5 * * * *": [
+			"taskflow_ai.taskflow_ai.api.real_time_monitor.setup_real_time_monitoring"
+		]
+	}
+}
 
 # Testing
 # -------
@@ -231,6 +258,16 @@ app_license = "mit"
 # Authentication and authorization
 # --------------------------------
 
+# Installation Hooks
+# ------------------
+
+# Functions to execute before/after app installation
+before_install = "taskflow_ai.taskflow_ai.install.before_install"
+after_install = "taskflow_ai.taskflow_ai.install.after_install"
+
+# Function to execute when app is being uninstalled
+before_uninstall = "taskflow_ai.taskflow_ai.install.uninstall"
+
 # auth_hooks = [
 # 	"taskflow_ai.auth.validate"
 # ]
@@ -241,4 +278,7 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+
+
 
